@@ -18,7 +18,11 @@ public class KittenController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        moveKitten();
+    }
 
+    private void moveKitten()
+    {
         var vertical = Input.GetAxis("Vertical");
         var horizontal = Input.GetAxis("Horizontal");
 
@@ -49,7 +53,6 @@ public class KittenController : MonoBehaviour {
 
     private void flipDirection(bool isLeft)
     {
-
         if (_current_is_left ^ isLeft)
         {
             if (isLeft)
@@ -62,6 +65,5 @@ public class KittenController : MonoBehaviour {
             }
             _current_is_left = isLeft;
         }
-
     }
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4664fa49165552d429865bbe0fb93683
-timeCreated: 1483753990
+guid: 98403ac8dc1e4924794eeb94a57fc679
+timeCreated: 1483838905
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,8 +8,8 @@ TextureImporter:
     21300002: sphynx_1
     21300004: sphynx_2
     21300006: sphynx_3
-    21300008: sphynx_pounce
-    21300010: sphynx_box
+    21300008: sphynx_4
+    21300010: sphynx_5
     21300012: sphynx_6
     21300014: sphynx_7
     21300016: sphynx_8
@@ -18,8 +18,6 @@ TextureImporter:
     21300022: sphynx_11
     21300024: sphynx_12
     21300026: sphynx_13
-    21300028: sphynx_4
-    21300030: sphynx_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -150,19 +148,6 @@ TextureImporter:
       name: sphynx_6
       rect:
         serializedVersion: 2
-        x: 756
-        y: 128
-        width: 126
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sphynx_7
-      rect:
-        serializedVersion: 2
         x: 0
         y: 3
         width: 126
@@ -173,7 +158,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_8
+      name: sphynx_7
       rect:
         serializedVersion: 2
         x: 126
@@ -186,7 +171,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_9
+      name: sphynx_8
       rect:
         serializedVersion: 2
         x: 252
@@ -199,7 +184,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_10
+      name: sphynx_9
       rect:
         serializedVersion: 2
         x: 378
@@ -212,7 +197,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_11
+      name: sphynx_10
       rect:
         serializedVersion: 2
         x: 504
@@ -225,7 +210,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_12
+      name: sphynx_11
       rect:
         serializedVersion: 2
         x: 630
@@ -238,7 +223,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sphynx_13
+      name: sphynx_12
       rect:
         serializedVersion: 2
         x: 756
@@ -246,7 +231,20 @@ TextureImporter:
         width: 126
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: sphynx_13
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 3
+        width: 117
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
