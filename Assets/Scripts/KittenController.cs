@@ -3,16 +3,21 @@ using System.Collections;
 
 public class KittenController : MonoBehaviour {
 
+    public float walkSpeed = 0.05f;
+
     private Animator animator;
+    private CharacterController charController;
 
     private const string DIRECTION = "Direction";
-    private DirectionEnum _currentDirection = DirectionEnum.IDLE;
+    private DirectionEnum _currentDirection = DirectionEnum.SOUTH;
     private bool _current_is_left = false;
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        charController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -28,42 +33,48 @@ public class KittenController : MonoBehaviour {
 
         if (vertical > 0)
         {
-            animator.SetInteger(DIRECTION, (int)DirectionEnum.SOUTH);
+            changeDirection(DirectionEnum.SOUTH);
+            charController.Move(walkSpeed * Vector2.up);
         }
         else if (vertical < 0)
         {
-            animator.SetInteger(DIRECTION, (int)DirectionEnum.NORTH);
+            changeDirection(DirectionEnum.NORTH);
+            charController.Move(walkSpeed * Vector2.down);
         }
         else if (horizontal > 0)
         {
-            animator.SetInteger(DIRECTION, (int)DirectionEnum.EAST);
+            changeDirection(DirectionEnum.SIDE);
+            charController.Move(walkSpeed * Vector2.left);
             flipDirection(true);
         }
         else if (horizontal < 0)
         {
-            animator.SetInteger(DIRECTION, (int)DirectionEnum.WEST);
+            changeDirection(DirectionEnum.SIDE);
+            charController.Move(walkSpeed * Vector2.right);
             flipDirection(false);
         }
         else
         {
-            //TODO: for testing make a universal idle state so we know. (use the box lel)
-            animator.SetInteger(DIRECTION, -1);
+            animator.SetInteger(DIRECTION, (int)DirectionEnum.IDLE);
         }
+    }
+
+    //TODO: use this line when Unity's c sharp verison is upgraded
+    //[MethodImpl(MethodImplOptions.AggresiveInlining)]
+    private void changeDirection(DirectionEnum _direction)
+    {
+        _currentDirection = _direction;
+        animator.SetInteger(DIRECTION, (int)_direction);
     }
 
     private void flipDirection(bool isLeft)
     {
         if (_current_is_left ^ isLeft)
         {
-            if (isLeft)
-            {
-                transform.Rotate(0, 180, 0);
-            }
-            else
-            {
-                transform.Rotate(0, -180, 0);
-            }
+            transform.Rotate(0, isLeft ? 180 : -180, 0);
             _current_is_left = isLeft;
         }
     }
+
+    
 }
