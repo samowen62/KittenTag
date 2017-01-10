@@ -3,21 +3,31 @@ using System.Collections;
 
 public class KittenController : MonoBehaviour {
 
-    public float walkSpeed = 0.05f;
+    public float walkSpeed = 0.05f;  
+
+    private const string DIRECTION              = "Direction";
+    private const string TALL_BOX               = "TallBox";
+    private const string FLAT_BOX               = "FlatBox";
+
+    private DirectionEnum   _currentDirection   = DirectionEnum.SOUTH;
+    private bool            _current_is_left    = false;
+    private bool            _current_is_tall    = false;
 
     private Animator animator;
-    private CharacterController charController;
-
-    private const string DIRECTION = "Direction";
-    private DirectionEnum _currentDirection = DirectionEnum.SOUTH;
-    private bool _current_is_left = false;
+    private Rigidbody2D rigidBody;
+    private BoxCollider2D tallCollider;
+    private BoxCollider2D flatCollider;
 
     // Use this for initialization
     void Start()
     {
-        animator = GetComponent<Animator>();
+        GeneralUtil.Require(animator = GetComponent<Animator>());
 
-        charController = GetComponent<CharacterController>();
+        GeneralUtil.Require(rigidBody = GetComponent<Rigidbody2D>());
+        GeneralUtil.Require(rigidBody.freezeRotation = true);
+
+        GeneralUtil.Require(tallCollider = transform.Find(TALL_BOX).gameObject.GetComponent<BoxCollider2D>());
+        GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider2D>());
     }
 
     // Update is called once per frame
@@ -34,27 +44,32 @@ public class KittenController : MonoBehaviour {
         if (vertical > 0)
         {
             changeDirection(DirectionEnum.SOUTH);
-            charController.Move(walkSpeed * Vector2.up);
+            rigidBody.velocity = walkSpeed * Vector2.up;
+            flipCollider(true);
         }
         else if (vertical < 0)
         {
             changeDirection(DirectionEnum.NORTH);
-            charController.Move(walkSpeed * Vector2.down);
-        }
-        else if (horizontal > 0)
-        {
-            changeDirection(DirectionEnum.SIDE);
-            charController.Move(walkSpeed * Vector2.left);
-            flipDirection(true);
+            rigidBody.velocity = walkSpeed * Vector3.down;
+            flipCollider(true);
         }
         else if (horizontal < 0)
         {
             changeDirection(DirectionEnum.SIDE);
-            charController.Move(walkSpeed * Vector2.right);
+            rigidBody.velocity = walkSpeed * Vector3.left;
+            flipDirection(true);
+            flipCollider(false);
+        }
+        else if (horizontal > 0)
+        {
+            changeDirection(DirectionEnum.SIDE);
+            rigidBody.velocity = walkSpeed * Vector3.right;
             flipDirection(false);
+            flipCollider(false);
         }
         else
         {
+            rigidBody.velocity = Vector3.zero;
             animator.SetInteger(DIRECTION, (int)DirectionEnum.IDLE);
         }
     }
@@ -76,5 +91,15 @@ public class KittenController : MonoBehaviour {
         }
     }
 
-    
+    private void flipCollider(bool isTall)
+    {
+        if (_current_is_tall ^ isTall)
+        {
+            tallCollider.enabled = isTall;
+            flatCollider.enabled = !isTall;
+            _current_is_tall = isTall;
+        }
+    }
+
+
 }
