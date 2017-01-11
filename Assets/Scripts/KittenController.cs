@@ -28,6 +28,9 @@ public class KittenController : MonoBehaviour {
 
         GeneralUtil.Require(tallCollider = transform.Find(TALL_BOX).gameObject.GetComponent<BoxCollider2D>());
         GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider2D>());
+
+        tallCollider.enabled = false;
+        flatCollider.enabled = true;
     }
 
     // Update is called once per frame

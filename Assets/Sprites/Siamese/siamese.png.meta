@@ -1,9 +1,26 @@
 fileFormatVersion: 2
 guid: be0aa964bfc17be44955ebab0c4be5cd
-timeCreated: 1483918333
+timeCreated: 1484093966
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: siamese_0
+    21300002: siamese_1
+    21300004: siamese_2
+    21300006: siamese_3
+    21300008: siamese_4
+    21300010: siamese_5
+    21300012: siamese_6
+    21300014: siamese_7
+    21300016: siamese_8
+    21300018: siamese_9
+    21300020: siamese_10
+    21300022: siamese_11
+    21300024: siamese_12
+    21300026: siamese_13
+    21300028: siamese_14
+    21300030: siamese_15
+    21300032: siamese_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +55,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +68,228 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: siamese_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 142
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 142
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 142
+        width: 104
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 142
+        width: 104
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 142
+        width: 109
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_5
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 14
+        width: 60
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 13
+        width: 100
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 15
+        width: 100
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_8
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 14
+        width: 60
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_9
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 14
+        width: 60
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_10
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 13
+        width: 100
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_11
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 17
+        width: 60
+        height: 128
+      alignment: 9
+      pivot: {x: 0.52223, y: 0.5312625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_12
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 14
+        width: 60
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_15
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: siamese_16
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 144
+        width: 106
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
