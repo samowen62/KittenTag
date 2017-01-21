@@ -14,20 +14,23 @@ public class KittenController : MonoBehaviour {
     private bool            _current_is_tall    = false;
 
     private Animator animator;
-    private Rigidbody2D rigidBody;
+    private SpriteRenderer renderer;
+    private Rigidbody rigidBody;
     private BoxCollider2D tallCollider;
     private BoxCollider2D flatCollider;
 
     // Use this for initialization
     void Start()
     {
+        //TODO replace GeneralUtil with asserts
         GeneralUtil.Require(animator = GetComponent<Animator>());
+        GeneralUtil.Require(renderer = GetComponent<SpriteRenderer>());
 
-        GeneralUtil.Require(rigidBody = GetComponent<Rigidbody2D>());
+        GeneralUtil.Require(rigidBody = GetComponent<Rigidbody>());
         GeneralUtil.Require(rigidBody.freezeRotation = true);
 
         GeneralUtil.Require(tallCollider = transform.Find(TALL_BOX).gameObject.GetComponent<BoxCollider2D>());
-        GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider2D>());
+        GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider2D>());    
 
         tallCollider.enabled = false;
         flatCollider.enabled = true;
@@ -47,13 +50,13 @@ public class KittenController : MonoBehaviour {
         if (vertical > 0)
         {
             changeDirection(DirectionEnum.SOUTH);
-            rigidBody.velocity = walkSpeed * Vector2.up;
+            rigidBody.velocity = walkSpeed * Vector3.forward;
             flipCollider(true);
         }
         else if (vertical < 0)
         {
             changeDirection(DirectionEnum.NORTH);
-            rigidBody.velocity = walkSpeed * Vector3.down;
+            rigidBody.velocity = walkSpeed * Vector3.back;
             flipCollider(true);
         }
         else if (horizontal < 0)
@@ -89,7 +92,8 @@ public class KittenController : MonoBehaviour {
     {
         if (_current_is_left ^ isLeft)
         {
-            transform.Rotate(0, isLeft ? 180 : -180, 0);
+            //renderer.transform.Rotate(0, 0, isLeft ? 180 : -180);
+            renderer.flipX = !renderer.flipX;
             _current_is_left = isLeft;
         }
     }
