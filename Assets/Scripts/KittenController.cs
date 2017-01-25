@@ -3,7 +3,9 @@ using System.Collections;
 
 public class KittenController : MonoBehaviour {
 
-    public float walkSpeed = 0.05f;  
+    public float walkSpeed = 0.05f;
+    public float direction_switch_time = 0.3f;
+    private float direction_switch_last = 0f;
 
     private const string DIRECTION              = "Direction";
     private const string TALL_BOX               = "TallBox";
@@ -11,7 +13,7 @@ public class KittenController : MonoBehaviour {
     private const string SPRITE_CHILD           = "Sprite";
     private float COS_45                        = 1 / Mathf.Sqrt(2);
 
-    private DirectionEnum   _currentDirection   = DirectionEnum.SOUTH;
+    private DirectionEnum   _currentDirection   = DirectionEnum.IDLE;
     private bool            _current_is_left    = false;
     private bool            _current_is_tall    = false;
 
@@ -37,7 +39,7 @@ public class KittenController : MonoBehaviour {
         GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider>());
 
         navAgent.updateRotation = false;
-        navAgent.speed = 1f;
+        navAgent.speed = walkSpeed;
 
         tallCollider.enabled = false;
         flatCollider.enabled = true;
@@ -61,13 +63,11 @@ public class KittenController : MonoBehaviour {
         if (dir > COS_45)
         {
             changeDirection(DirectionEnum.SOUTH);
-            //rigidBody.velocity = walkSpeed * Vector3.forward;
             flipCollider(true);
         }
         else if (dir <= -COS_45)
         {
             changeDirection(DirectionEnum.NORTH);
-            //rigidBody.velocity = walkSpeed * Vector3.back;
             flipCollider(true);
         }
         else
@@ -76,19 +76,16 @@ public class KittenController : MonoBehaviour {
             if (dir > 0)
             {
                 changeDirection(DirectionEnum.SIDE);
-                //rigidBody.velocity = walkSpeed * Vector3.left;
                 flipDirection(true);
                 flipCollider(false);
             }
             else if (dir < 0)
             {
                 changeDirection(DirectionEnum.SIDE);
-                //rigidBody.velocity = walkSpeed * Vector3.right;
                 flipDirection(false);
                 flipCollider(false);
             } else
             {
-                //rigidBody.velocity = Vector3.zero;
                 animator.SetInteger(DIRECTION, (int)DirectionEnum.IDLE);
             }      
         }
@@ -99,8 +96,20 @@ public class KittenController : MonoBehaviour {
     //[MethodImpl(MethodImplOptions.AggresiveInlining)]
     private void changeDirection(DirectionEnum _direction)
     {
-        _currentDirection = _direction;
-        animator.SetInteger(DIRECTION, (int)_direction);
+        if(_direction == DirectionEnum.IDLE)
+        {
+            _currentDirection = _direction;
+            animator.SetInteger(DIRECTION, (int)_direction);
+        }
+        else if (_currentDirection != _direction)
+        {
+            if (Time.fixedTime - direction_switch_last > direction_switch_time)
+            {
+                direction_switch_last = Time.fixedTime;
+                _currentDirection = _direction;
+                animator.SetInteger(DIRECTION, (int)_direction);
+            }
+        }
     }
 
     private void flipDirection(bool isLeft)
