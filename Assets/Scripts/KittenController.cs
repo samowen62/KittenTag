@@ -19,7 +19,6 @@ public class KittenController : MonoBehaviour {
 
     private Animator animator;
     private SpriteRenderer renderer2d;
-    //private Rigidbody rigidBody;
     private NavMeshAgent navAgent;
     private BoxCollider tallCollider;
     private BoxCollider flatCollider;
@@ -31,9 +30,6 @@ public class KittenController : MonoBehaviour {
         GeneralUtil.Require(navAgent = GetComponent<NavMeshAgent>());
         GeneralUtil.Require(animator = transform.Find(SPRITE_CHILD).GetComponent<Animator>());
         GeneralUtil.Require(renderer2d = transform.Find(SPRITE_CHILD).GetComponent<SpriteRenderer>());
-        
-        //GeneralUtil.Require(rigidBody = GetComponent<Rigidbody>());
-        //GeneralUtil.Require(rigidBody.freezeRotation = true);
 
         GeneralUtil.Require(tallCollider = transform.Find(TALL_BOX).gameObject.GetComponent<BoxCollider>());
         GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider>());
@@ -47,16 +43,40 @@ public class KittenController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
-        navAgent.SetDestination(new Vector3(-4, 0, 0));
+    {        
+        updateInputs();
 
-        moveKitten();
+        pointKitten();
     }
 
-    private void moveKitten()
+    private void updateInputs()
     {
-        //var vertical = Input.GetAxis("Vertical");
-        //var horizontal = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.transform.name == "Plane")
+                {
+                    Debug.Log(hit.point);
+                    navAgent.SetDestination(hit.point);
+                }
+            }
+        }
+        /*foreach (var touch in Input.touches)
+        {
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                Debug.Log(touch.position);
+            }
+        }*/
+    }
+
+    private void pointKitten()
+    {
 
         float dir = Vector3.Dot(navAgent.velocity.normalized, Vector3.forward);
 
@@ -86,12 +106,11 @@ public class KittenController : MonoBehaviour {
                 flipCollider(false);
             } else
             {
-                animator.SetInteger(DIRECTION, (int)DirectionEnum.IDLE);
+                changeDirection(DirectionEnum.IDLE);
             }      
         }
     }
 
-    //TODO: have buffer time between switching directions
     //TODO: use this line when Unity's c sharp verison is upgraded
     //[MethodImpl(MethodImplOptions.AggresiveInlining)]
     private void changeDirection(DirectionEnum _direction)
