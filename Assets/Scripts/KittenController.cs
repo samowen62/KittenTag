@@ -7,7 +7,12 @@ public class KittenController : MonoBehaviour {
     public float direction_switch_time = 0.3f;
     private float direction_switch_last = 0f;
 
+    //for User input
+    private float pushBegin = 0f;
+
     private const string DIRECTION              = "Direction";
+    private const string SPHERE_POINTER         = "SpherePointer";
+    private const string PLANE                  = "Plane";
     private const string TALL_BOX               = "TallBox";
     private const string FLAT_BOX               = "FlatBox";
     private const string SPRITE_CHILD           = "Sprite";
@@ -19,6 +24,7 @@ public class KittenController : MonoBehaviour {
 
     private Animator animator;
     private SpriteRenderer renderer2d;
+    private MeshRenderer spherePointer;
     private NavMeshAgent navAgent;
     private BoxCollider tallCollider;
     private BoxCollider flatCollider;
@@ -33,6 +39,8 @@ public class KittenController : MonoBehaviour {
 
         GeneralUtil.Require(tallCollider = transform.Find(TALL_BOX).gameObject.GetComponent<BoxCollider>());
         GeneralUtil.Require(flatCollider = transform.Find(FLAT_BOX).gameObject.GetComponent<BoxCollider>());
+        GeneralUtil.Require(spherePointer = GameObject.Find(SPHERE_POINTER).gameObject.GetComponent<MeshRenderer>());
+
 
         navAgent.updateRotation = false;
         navAgent.speed = walkSpeed;
@@ -54,14 +62,18 @@ public class KittenController : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire1"))
         {
+           
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
-                if (hit.transform.name == "Plane")
+                if (hit.transform.tag == PLANE)
                 {
-                    Debug.Log(hit.point);
                     navAgent.SetDestination(hit.point);
+
+                    //TODO: use pause parent class
+                    pushBegin = Time.fixedTime;
+                    StartCoroutine(DrawRipple(hit.point));
                 }
             }
         }
@@ -150,5 +162,24 @@ public class KittenController : MonoBehaviour {
         }
     }
 
+    IEnumerator DrawRipple(Vector3 center)
+    {
+        float radius = 0.4f;
+        float totalTime = 0.1f;
+        float timePassed = Time.fixedTime - pushBegin;
+        spherePointer.gameObject.SetActive(true);
+        spherePointer.transform.position = center;
+        spherePointer.transform.localScale = new Vector3(radius, radius, radius);
 
+        while (timePassed < totalTime)
+        {
+            radius = Mathf.Lerp(0.1f, 0.3f, timePassed / totalTime);
+            spherePointer.transform.localScale = new Vector3(radius, radius, radius);
+            timePassed = Time.fixedTime - pushBegin;
+            yield return null;
+        }
+
+        spherePointer.gameObject.SetActive(false);
+        yield return true;
+    }
 }

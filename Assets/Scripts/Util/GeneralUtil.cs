@@ -3,6 +3,8 @@ using System.Linq;
 
 public static class GeneralUtil  {
 
+    public static string TEST_1 = "Tentative";
+
     /**
      * Throws error if the parameter is null
      */
