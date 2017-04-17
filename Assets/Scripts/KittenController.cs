@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class KittenController : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class KittenController : MonoBehaviour {
     private const string DIRECTION              = "Direction";
     private const string SPHERE_POINTER         = "SpherePointer";
     private const string PLANE                  = "Plane";
+    private const string HIDING_PLACE           = "HidingPlace";
     private const string TALL_BOX               = "TallBox";
     private const string FLAT_BOX               = "FlatBox";
     private const string SPRITE_CHILD           = "Sprite";
@@ -21,6 +23,9 @@ public class KittenController : MonoBehaviour {
     private DirectionEnum   _currentDirection   = DirectionEnum.IDLE;
     private bool            _current_is_left    = false;
     private bool            _current_is_tall    = false;
+
+    private GameObject      _hiding_place_destination = null;
+    private float           _path_end_threshold = 0.25f;
 
     private Animator animator;
     private SpriteRenderer renderer2d;
@@ -54,6 +59,8 @@ public class KittenController : MonoBehaviour {
     {        
         updateInputs();
 
+        checkAction();
+
         pointKitten();
     }
 
@@ -69,10 +76,21 @@ public class KittenController : MonoBehaviour {
             {
                 if (hit.transform.tag == PLANE)
                 {
+                    _hiding_place_destination = null;
                     navAgent.SetDestination(hit.point);
 
                     //TODO: use pause parent class
                     pushBegin = Time.fixedTime;
+                    StartCoroutine(DrawRipple(hit.point));
+                } else if (hit.transform.tag == HIDING_PLACE)
+                {
+                    Debug.Log("hiding");
+                    _hiding_place_destination = hit.transform.gameObject;
+
+                    navAgent.SetDestination(_hiding_place_destination.transform.position);
+                    pushBegin = Time.fixedTime;
+
+                    //TODO: instead of the ripple try highlighting the object to hide in
                     StartCoroutine(DrawRipple(hit.point));
                 }
             }
@@ -85,6 +103,24 @@ public class KittenController : MonoBehaviour {
                 Debug.Log(touch.position);
             }
         }*/
+    }
+
+    private void checkAction()
+    {
+        //TODO:investigate
+        //if(_hiding_place_destination != null)
+          //  Debug.Log((transform.position - _hiding_place_destination.transform.position).sqrMagnitude);
+
+
+        if (_hiding_place_destination != null 
+            && (transform.localPosition - _hiding_place_destination.transform.position).sqrMagnitude < 1.4f)
+        {
+            Debug.Log("PlayHideAnimation()");
+            navAgent.ResetPath(); 
+            //TODO: to hide we will point the player to the destination 
+            //object and then play the animation to enter the box
+            _hiding_place_destination = null;
+        }
     }
 
     private void pointKitten()
