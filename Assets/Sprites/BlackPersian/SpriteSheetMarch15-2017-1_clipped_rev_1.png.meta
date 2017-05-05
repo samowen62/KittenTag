@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 549bede62b1ca3c45b4824dd4ca2711e
+timeCreated: 1493425047
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpriteSheetMarch15-2017-1_clipped_rev_1_0
+    21300002: SpriteSheetMarch15-2017-1_clipped_rev_1_1
+    21300004: SpriteSheetMarch15-2017-1_clipped_rev_1_2
+    21300006: SpriteSheetMarch15-2017-1_clipped_rev_1_3
+    21300008: SpriteSheetMarch15-2017-1_clipped_rev_1_4
+    21300010: SpriteSheetMarch15-2017-1_clipped_rev_1_5
+    21300012: SpriteSheetMarch15-2017-1_clipped_rev_1_6
+    21300014: SpriteSheetMarch15-2017-1_clipped_rev_1_7
+    21300016: SpriteSheetMarch15-2017-1_clipped_rev_1_8
+    21300018: SpriteSheetMarch15-2017-1_clipped_rev_1_9
+    21300020: SpriteSheetMarch15-2017-1_clipped_rev_1_10
+    21300022: SpriteSheetMarch15-2017-1_clipped_rev_1_11
+    21300024: SpriteSheetMarch15-2017-1_clipped_rev_1_12
+    21300026: SpriteSheetMarch15-2017-1_clipped_rev_1_13
+    21300028: SpriteSheetMarch15-2017-1_clipped_rev_1_14
+    21300030: SpriteSheetMarch15-2017-1_clipped_rev_1_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 563
+        width: 70
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 563
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 563
+        width: 66
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 563
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_4
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 563
+        width: 64
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_5
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 564
+        width: 70
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_6
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 563
+        width: 69
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_7
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 564
+        width: 70
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 477
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 479
+        width: 54
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_10
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 478
+        width: 41
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 477
+        width: 42
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_12
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 478
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_13
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 478
+        width: 48
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_14
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 478
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheetMarch15-2017-1_clipped_rev_1_15
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 479
+        width: 44
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
